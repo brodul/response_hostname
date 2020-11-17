@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "response_hostname.fullname" . }}
+  name: {{ include "response-hostname.fullname" . }}
   labels:
-    {{- include "response_hostname.labels" . | nindent 4 }}
+    {{- include "response-hostname.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "response_hostname.selectorLabels" . | nindent 4 }}
+    {{- include "response-hostname.selectorLabels" . | nindent 4 }}

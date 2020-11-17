@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "response_hostname.name" -}}
+{{- define "response-hostname.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -11,7 +11,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "response_hostname.fullname" -}}
+{{- define "response-hostname.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -27,16 +27,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "response_hostname.chart" -}}
+{{- define "response-hostname.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "response_hostname.labels" -}}
-helm.sh/chart: {{ include "response_hostname.chart" . }}
-{{ include "response_hostname.selectorLabels" . }}
+{{- define "response-hostname.labels" -}}
+helm.sh/chart: {{ include "response-hostname.chart" . }}
+{{ include "response-hostname.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -46,17 +46,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "response_hostname.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "response_hostname.name" . }}
+{{- define "response-hostname.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "response-hostname.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "response_hostname.serviceAccountName" -}}
+{{- define "response-hostname.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "response_hostname.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "response-hostname.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
