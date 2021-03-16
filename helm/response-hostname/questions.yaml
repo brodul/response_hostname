@@ -1,0 +1,27 @@
+categories:
+  - Tools
+questions:
+  - variable: autoscaling.enabled
+    default: "false"
+    description: "Enable HPA autoscaling"
+    type: boolean
+    required: true
+    label: Autoscaling enabled
+    show_subquestion_if: true
+    group: "Autoscaling settings"
+    subquestions:
+      - variable: autoscaling.minReplicas
+        default: 1
+        description: "Minimal amount of pods"
+        type: int
+        label: Minimal replicas
+      - variable: autoscaling.maxReplicas
+        default: 3
+        description: "Maximal amount of pods"
+        type: int
+        label: Maximal replicas
+      - variable: autoscaling.targetCPUUtilizationPercentage
+        default: 80
+        description: "Target CPU utilization in percents for autoscaler"
+        type: int
+        label: Target CPU utilization

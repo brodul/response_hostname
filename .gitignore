@@ -1,1 +1,8 @@
+# ignore binary
 /response_hostname
+
+# ignore helm package
+response_hostname*.tgz
+response-hostname*.tgz
+# ignore helm index
+index.yaml
