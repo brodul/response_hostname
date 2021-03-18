@@ -35,7 +35,9 @@ targetCustomizations:
     # Custom kustomize options overriding the options at the root
     # kustomize: {}
     # Custom Helm options override the options at the root
-    # helm: {}
+    helm:
+      values:
+        replicaCount: 10
     # If using raw YAML these are names that map to overlays/{name} that will be used
     # to replace or patch a resource. If you wish to customize the file ./subdir/resource.yaml
     # then a file ./overlays/myoverlay/subdir/resource.yaml will replace the base file.
