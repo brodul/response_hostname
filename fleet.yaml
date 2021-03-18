@@ -60,4 +60,4 @@ targetCustomizations:
     #   matchLabels:
     #     region: us-east
     # A specific clusterGroup by name that will be selected
-    # clusterGroup: group1
+    clusterGroup: default
