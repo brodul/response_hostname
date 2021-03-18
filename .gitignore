@@ -4,5 +4,10 @@
 # ignore helm package
 response_hostname*.tgz
 response-hostname*.tgz
+
+# ignore helm package signitures
+response_hostname*.tgz.prov
+response-hostname*.tgz.prov
+
 # ignore helm index
 index.yaml
