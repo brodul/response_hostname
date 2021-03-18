@@ -51,9 +51,10 @@ targetCustomizations:
     clusterGroup: default
   - name: staging
     # Custom namespace value overriding the value at the root
-    namespace: brodul-staging
+    # namespace: brodul-staging
     # Custom Helm options override the options at the root
     helm:
+      releaseName: brodul-staging
       values:
         replicaCount: 5
     # A selector used to match clusters.  The structure is the standard
