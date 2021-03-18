@@ -15,7 +15,7 @@ helm:
   # This allows one to download charts from most any location.  Also know that
   # go-getter URL supports adding a digest to validate the download. If repo
   # is set below this field is the name of the chart to lookup
-  chart: ./helm/response-hostname
+  chart: ../../helm/response-hostname
   # A custom release name to deploy the chart as. If not specified a release name
   # will be generated.
   releaseName: brodul-production
