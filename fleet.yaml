@@ -55,7 +55,7 @@ targetCustomizations:
     # Custom Helm options override the options at the root
     helm:
       values:
-        replicaCount: 10
+        replicaCount: 5
     # A selector used to match clusters.  The structure is the standard
     # metav1.LabelSelector format. If clusterGroupSelector or clusterGroup is specified,
     # clusterSelector will be used only to further refine the selection after
