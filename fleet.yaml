@@ -22,4 +22,4 @@ helm:
   # Any values that should be placed in the `values.yaml` and passed to helm during
   # install.
   values:
-    replicaCount: 2
+    replicaCount: 5
